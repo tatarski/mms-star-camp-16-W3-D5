@@ -64,5 +64,25 @@ void pop_back(Node **head_pp) {
     free(last_node);
 }
 void reverse(Node **head_pp) {
-
+	Node ** newhead = NULL;
+	Node *a = *head_pp;
+	Node *reverse_last = NULL;
+	if(*head_pp == NULL){return;}
+	if(a->next == NULL){return;}
+	while(a->next != NULL){
+		a = a->next;
+	}
+	newhead = &a;
+	reverse_last = a;
+	reverse_last->next = NULL;
+	while(reverse_last != *head_pp){
+		Node *a = *head_pp;
+		while(a->next != reverse_last){
+			a = a->next;
+		}
+		reverse_last->next = a;
+		reverse_last = a;
+		reverse_last->next = NULL;
+	}
+	*head_pp = *newhead;
 }
