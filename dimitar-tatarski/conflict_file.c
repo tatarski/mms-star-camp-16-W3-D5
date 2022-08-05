@@ -1,6 +1,6 @@
 #include<stdio.h>
 int main() {
 	printf("ASDF");
-	perror("HELLO WORLD");
+	perror("NNO\n");
 	return 0;
 }
