@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/power/Documents/GitHub/mms-star-camp-16-W3-D5'
+make: Leaving directory '/home/power/Documents/GitHub/mms-star-camp-16-W3-D5'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+
