@@ -25,6 +25,22 @@ void push_back(DLL *dll, Data new_data)
 
 void pop_front(DLL *dll)
 {
+    Node *deleted_node=dll->head;
+    if(!dll->head&&!dll->tail)
+    {
+        perror("Empty linked list\n");
+        exit(-1);
+    }
+    if(dll->head==dll->tail)
+    {
+        free(deleted_node);
+        dll->head=NULL;
+        dll->tail=NULL;
+        return;
+    }
+    dll->head=dll->head->next;
+    dll->head->prev=NULL;
+    free(deleted_node);
 }
 
 void pop_back(DLL *dll)

@@ -35,5 +35,11 @@ int main() {
     push_front(&test_DLL, (Data){405, 23.3});
     
     print_dll(test_DLL);
+
+    pop_front(&test_DLL);
+
+    printf("\n");
+    print_dll(test_DLL);
+
     return 0;
 }
