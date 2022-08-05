@@ -18,4 +18,5 @@ void pop_front(Node **head_pp);
 void push_front(Node **head_pp, long new_data);
 
 void pop_back(Node **head_pp);
+int lenght_linked_list(Node *head_p);
 void reverse(Node **head_pp);
