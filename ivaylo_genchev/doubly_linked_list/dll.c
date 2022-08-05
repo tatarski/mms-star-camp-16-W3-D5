@@ -1,37 +1,71 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 #include "dll.h"
 
-void create_example_dll()
-{
-    test_data[0] = (Data){100, 12.3};
-    test_data[1] = (Data){126, 12.3};
-    test_data[2] = (Data){305, 12.3};
-    test_data[3] = (Data){23, 12.3};
-    test_data[4] = (Data){55, 12.3};
-    test_nodes[0] = (Node){test_data[0], NULL, test_nodes + 1};
-    test_nodes[1] = (Node){test_data[1], test_nodes, test_nodes + 2};
-    test_nodes[2] = (Node){test_data[2], test_nodes + 1, test_nodes + 3};
-    test_nodes[3] = (Node){test_data[3], test_nodes + 2, test_nodes + 4};
-    test_nodes[4] = (Node){test_data[4], test_nodes + 3, NULL};
-    test_DLL.head = test_nodes;
-    test_DLL.tail = test_nodes + 4;
-}
 
 void print_dll(DLL dll)
 {
+    Node *inode = dll.head; 
+    while (NULL != inode) {
+        printf("%ld %f", inode->data.timestamp, inode->data.temperature);
+        putchar('\n');
+        inode = inode->next;
+    }
+
+    putchar('\n');
 }
 
 void push_back(DLL *dll, Data new_data)
 {
+    Node *new_node = malloc(sizeof(Node));
+    if (NULL == new_node)
+        return;
+
+    new_node->prev = dll->tail;
+    new_node->next = NULL;
+    new_node->data = new_data;
+
+    dll->tail->next = new_node;
 }
 
 void pop_front(DLL *dll)
 {
+    if (NULL == dll->head)
+        return;
+
+    Node *old_head = dll->head;
+    dll->head = old_head->next;
+
+    if (NULL != dll->head)
+        dll->head->prev = NULL;
+
+    free(old_head);
 }
 
 void pop_back(DLL *dll)
 {
+    if (NULL == dll->tail)
+        return;
+
+    Node *old_tail = dll->tail;
+    dll->tail = old_tail->prev;
+
+    if (NULL != dll->tail)
+        dll->tail->next = NULL;
+
+    free(old_tail);
 }
 
 void push_front(DLL *dll, Data new_data)
 {
+    Node *new_node = malloc(sizeof(Node));
+    if (NULL == new_node)
+        return;
+
+    new_node->next = dll->head;
+    new_node->prev = NULL;
+    new_node->data = new_data;
+
+    dll->head = new_node;
 }
