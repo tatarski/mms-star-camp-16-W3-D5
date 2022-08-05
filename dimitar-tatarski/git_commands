@@ -33,4 +33,12 @@ BRANCH_NAME : master
 Download from remote:
 git pull REMOTE_NAME BRANCH_NAME
 
+Branches:
+git checkout BRANCH_NAME
+git checkout -b NEW_BRANCH_NAME
 
+CURRENT BRANCH - BRANCH1
+git merge BRANCH2 (Merges BRANCH2 onto Current Branch (branch1) )
+
+git commit
+git commit -m "Merge branch2 onto branch1"

@@ -8,5 +8,8 @@ int main() {
     push_front(&head_linked_list_1, 1);
     push_front(&head_linked_list_1, 2);
     print_ll(head_linked_list_1);
+    printf("\n");
+    reverse(&head_linked_list_1);
+    print_ll(head_linked_list_1);
     return 0;
 }
