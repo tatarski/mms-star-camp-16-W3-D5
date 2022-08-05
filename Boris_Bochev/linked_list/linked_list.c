@@ -64,5 +64,19 @@ void pop_back(Node **head_pp) {
     free(last_node);
 }
 void reverse(Node **head_pp) {
-
+    int node_count=1000;
+    Node *node_pointers[node_count];
+    Node *cur_node_pointer = *head_pp;
+    int cnt=0;
+    while(cur_node_pointer!=NULL)
+    {
+        node_pointers[cnt++]=cur_node_pointer;
+        cur_node_pointer=cur_node_pointer->next;
+    }
+    *head_pp = node_pointers[cnt-1];
+    for(int i = cnt-1; i>=0; i--)
+    {
+        node_pointers[i]->next = node_pointers[i-1];
+    }
+    node_pointers[0]->next=NULL;
 }
