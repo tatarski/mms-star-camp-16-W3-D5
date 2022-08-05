@@ -1,0 +1,35 @@
+Clone repo:
+git clone link
+
+Stage files:
+git add .
+git add file_name
+git status
+
+Unstage:
+git restore --staged file_name
+
+Commit staged files:
+git commit -m "Commit message"
+
+See commit history:
+git log
+git log --all
+
+See previous commit:
+git checkout commit_hash
+git checkout -- file_name
+
+List/Add remote servers:
+git remote -v
+git remote add REMOTE_NAME remote_url
+
+Upload commits to remote:
+git push REMOTE_NAME BRANCH_NAME
+
+BRANCH_NAME : master
+
+Download from remote:
+git pull REMOTE_NAME BRANCH_NAME
+
+
