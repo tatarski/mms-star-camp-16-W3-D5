@@ -5,4 +5,4 @@ git restore - used to unstage files, alternative to .gitignore
 git add - adds files that will be commited
 git checkout <branchname>  -> changes branch
 git chekout -b <branchname> -> creates new branch
-
+git merge <branchname> -> merges branch
