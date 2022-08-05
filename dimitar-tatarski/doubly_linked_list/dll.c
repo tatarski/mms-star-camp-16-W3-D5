@@ -1,9 +1,5 @@
 #include "dll.h"
 
-Data test_data[5];
-Node test_nodes[5];
-DLL test_DLL;
-
 void create_example_dll()
 {
     test_data[0] = (Data){100, 12.3};
@@ -17,20 +13,25 @@ void create_example_dll()
     test_nodes[3] = (Node){test_data[3], test_nodes + 2, test_nodes + 4};
     test_nodes[4] = (Node){test_data[4], test_nodes + 3, NULL};
     test_DLL.head = test_nodes;
-    test_DLL.tail = test_nodes+4;
+    test_DLL.tail = test_nodes + 4;
 }
-int main() {
-    // Write more tests for dll
 
-    test_DLL.head = NULL;
-    test_DLL.tail = NULL;
+void print_dll(DLL dll)
+{
+}
 
-    push_back(&test_DLL, (Data){130, 13.4});
+void push_back(DLL *dll, Data new_data)
+{
+}
 
-    print_dll(test_DLL);
-    printf("\n");
-    pop_front(&test_DLL);
+void pop_front(DLL *dll)
+{
+}
 
-    print_dll(test_DLL);
-    return 0;
+void pop_back(DLL *dll)
+{
+}
+
+void push_front(DLL *dll, Data new_data)
+{
 }

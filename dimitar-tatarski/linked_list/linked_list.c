@@ -63,38 +63,6 @@ void pop_back(Node **head_pp) {
     second_to_last_node->next = NULL;
     free(last_node);
 }
-int length_linked_list(Node *head_p) {
-    int node_count = 0;
-    while(head_p) {
-        node_count++;
-        head_p=head_p->next;
-    }
-    return node_count;
-}
 void reverse(Node **head_pp) {
-    int node_count = length_linked_list(*head_pp);
-    // node_pointers is a local varaible -callstack
-    // Node *node_pointers[node_count];
-    
-    // node_pointers is a dynamic array - heap
-    Node **node_pointers = malloc(node_count*sizeof(Node*));
-    if(!node_pointers) { perror("Could not allocate memory for reverse.\n"); exit(-1);}
 
-    Node *cur_node_pointer = *head_pp;
-    int cur_node_count = 0;
-    // Store all node addresses in array
-    while(cur_node_pointer) {
-        node_pointers[cur_node_count++] = cur_node_pointer;
-        cur_node_pointer = cur_node_pointer->next;
-    }
-    // New first element
-    *head_pp = node_pointers[cur_node_count-1];
-
-    for(int i = cur_node_count-1; i > 0; i--) {
-        node_pointers[i]->next = node_pointers[i-1];
-    }
-    // New last element
-    node_pointers[0]->next = NULL;
-
-    free(node_pointers);
 }
