@@ -10,6 +10,8 @@ void print_ll(Node *head) {
             curNode, curNode->data, curNode->next);
         curNode = curNode->next;
     }
+
+    putchar('\n');
 }
 // Make head pointer to pointer so that
 // We can change fields of NODE struct
@@ -63,6 +65,18 @@ void pop_back(Node **head_pp) {
     second_to_last_node->next = NULL;
     free(last_node);
 }
-void reverse(Node **head_pp) {
 
+void reverse(Node **head_pp) {
+    Node *next = NULL;
+    Node *curr= *head_pp;
+    Node *prev = NULL;
+
+    while (NULL != curr) {
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+    }
+
+    *head_pp = prev;
 }
