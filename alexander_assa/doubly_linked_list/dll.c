@@ -17,7 +17,7 @@ void create_example_dll()
 }
 
 void print_dll(DLL dll)
-{
+{	if(NULL == dll.head){printf("empty list\n");return;}
 	Node *it = dll.head;
 	for(;it!=NULL;it=it->next){
 		printf("curr: %15p  next: %15p  prev: %15p  time: %4lu  temp: %f\n", it, it->next, it->prev, it->data.timestamp, it->data.temperature);
