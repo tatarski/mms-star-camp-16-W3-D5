@@ -1,0 +1,8 @@
+git checkout - restores to a commit, does not change local changes
+git remote add <ime> <link(polzvai ssh, za da izbegnesh login)>
+git status - shows what is about to be commited
+git restore - used to unstage files, alternative to .gitignore
+git add - adds files that will be commited
+git checkout <branchname>  -> changes branch
+git chekout -b <branchname> -> creates new branch
+git merge <branchname> -> merges branch
